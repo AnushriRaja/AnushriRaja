@@ -1,0 +1,29 @@
+def chatbot(input_text):
+    # Define rules and responses
+    rules_responses = {
+        "hi": "Hello! How can I assist you?",
+        "how are you": "I'm just a bot, but thanks for asking!",
+        "exam schedule": "The exam schedule will be available on the university website.",
+        "grades": "You can check your grades on the student portal.",
+        "course registration": "Course registration typically opens at the beginning of each semester.",
+        "financial aid": "For information about financial aid, you can visit the financial aid office or check their website.",
+        "help": "Sure, I'm here to assist you. What do you need help with?",
+        "bye": "Goodbye! Have a great day!"
+    }
+    
+    # Check if input matches any rule
+    for rule, response in rules_responses.items():
+        if rule in input_text.lower():
+            return response
+    
+    # If no rule matches, provide a default response
+    return "I'm sorry, I didn't understand your question. How can I assist you?"
+
+# Test the chatbot
+while True:
+    user_input = input("You: ")
+    if user_input.lower() == 'exit':
+        print("Chatbot: Goodbye! Have a great day!")
+        break
+    response = chatbot(user_input)
+    print("Chatbot:", response)
